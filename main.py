@@ -14,11 +14,18 @@ def get_order_details():
     return orders
 
 def get_customer_details():
-    """
-    TODO(Jedi Duncan Gonot): 
-    Create a function that accepts customer details.
-    """
-    pass
+   print("\n=-=-=-CUSTOMER DETAILS-=-=-=")
+   customer_name = input("Enter Customer Name: ")
+   senior_id = input("Enter Senior ID Number here (blank if none): ")
+
+   if not senior_id.strip():
+        senior_id = None  
+   else:
+        senior_id = int(senior_id)
+    
+   customer = [customer_name, senior_id]
+
+   return customer
 
 def calculate_grand_total():
     """
