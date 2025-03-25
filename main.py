@@ -57,12 +57,13 @@ def display_order(orders, customer_name, senior_id, grand_total):
     print(f"Senior ID No.: {senior_id if senior_id else 'N/A'}")
     print(f"Grand Total: {grand_total:.2f}")
 
-
 def main_function():
-    """
-    TODO(Paul Benidict Reduta): 
-    Create a function that integrates all the other functions.
-    """
-    pass
+    print("=-=-=-Welcome to Ordering System!!-=-=-=")
+    orders = get_order_details()
+    customer = get_customer_details()
+    customer_name = customer[0]
+    senior_id = customer[1]
+    grand_total = calculate_grand_total(orders, senior_id)
+    display_order(orders, customer_name, senior_id, grand_total)
 
 main_function()
