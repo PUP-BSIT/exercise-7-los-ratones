@@ -40,12 +40,23 @@ def calculate_grand_total(orders, senior_id):
 
     return grand_total
 
-def display_receipt():
-    """
-    TODO(Dion Manicio):
-    Create a function that displays the order information.
-    """
-    pass
+def display_order(orders, customer_name, senior_id, grand_total):
+    print("\n=-=-= RECEIPT =-=-=")
+    print("--------------------------------------------")
+    print("Product Name      Price      Quantity  Total")
+    print("--------------------------------------------")
+
+    for product_name, product_price, product_quantity in orders:
+        total_price = product_price * product_quantity
+        
+        print(f"{product_name:<15} {product_price:<10.2f} ", end = "")
+        print(f"{product_quantity:<8} {total_price:<.2f}")
+
+    print("--------------------------------------------")
+    print(f"Customer Name: {customer_name}")
+    print(f"Senior ID No.: {senior_id if senior_id else 'N/A'}")
+    print(f"Grand Total: {grand_total:.2f}")
+
 
 def main_function():
     """
