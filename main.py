@@ -1,9 +1,17 @@
 def get_order_details():
-    """
-    TODO(JohnPaul Rodriguez): 
-    Create a function that accepts order details.
-    """
-    pass
+    orders = []
+    user_input = "y"
+
+    print("=-=-=ORDERS DETAILS=-=-=-")
+    while user_input != "n":
+        product_name = input("Enter item name: ")
+        product_price = float(input(f"Enter price for {product_name}: "))
+        product_quantity = int(input(f"Enter quantity for {product_name}: "))
+        item = [product_name, product_price, product_quantity]
+        orders.append(item)
+        user_input = input("Do you want to add another item? (y/n): ").lower()
+
+    return orders
 
 def get_customer_details():
     """
