@@ -27,12 +27,18 @@ def get_customer_details():
 
    return customer
 
-def calculate_grand_total():
-    """
-    TODO(Kenji Enishi Campos): 
-    Create a function that calculate the grand total of items.
-    """
-    pass
+def calculate_grand_total(orders, senior_id):
+    grand_total = 0
+
+    for item in orders:
+        product_price = item[1]
+        product_quantity = item[2]
+        grand_total += product_price * product_quantity
+
+    if senior_id != None:
+        grand_total -= grand_total * 0.10 
+
+    return grand_total
 
 def display_receipt():
     """
